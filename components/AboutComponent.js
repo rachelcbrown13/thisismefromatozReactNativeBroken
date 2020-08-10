@@ -1,5 +1,8 @@
+import React, { Component } from 'react';
+import { View, Text, ScrollView, FlatList } from 'react-native';
+
 export default function About() {
     return (
-        <h1>About Page</h1>
+        <Text>About Page</Text>
     )
 }

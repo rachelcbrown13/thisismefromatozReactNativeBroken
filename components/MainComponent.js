@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Platform } from 'react-native';
+import { View, Text, Platform, Image, ScrollView } from 'react-native';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 import About from './AboutComponent';
 import Profiles from './ProfilesComponent';
@@ -14,8 +14,14 @@ const ProfilesNavigator = createStackNavigator(
     {
         initialRouteName: 'Profiles',
         navigationOptions: {
-            headerStyle: {
-                backgroundColor: '#cea400'
+            navigationOptions: {
+                headerStyle: {
+                    backgroundColor: '#cea400'
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    color: '#fff'
+                }
             }
         }
     }
@@ -44,11 +50,31 @@ const MainNavigator = createDrawerNavigator(
 class Main extends Component{
     render(){
         return(
-            <View>
+            <View style={{
+                    flex: 1,
+                    paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight
+                }}>
                 <MainNavigator/>
+                <Image 
+                    source={require('./images/FrontCover.png')}
+                    style={{width: 400, height:400}}
+                />                 
             </View>
         );
     }
 }
 
 export default Main;
+
+class Main extends Component {
+    render() {
+       
+        return (
+            <View style={{
+                flex: 1,
+                paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight
+            }}>
+                <MainNavigator />
+            </View>
+        );
+    }

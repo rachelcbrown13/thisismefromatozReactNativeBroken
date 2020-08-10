@@ -1,5 +1,8 @@
+import React, { Component } from 'react';
+import { View, Text, ScrollView, FlatList } from 'react-native';
+
 export default function CharacterCard() {
     return (
-        <h1>CharacterCard Page</h1>
+        <Text>CharacterCard Page</Text>
     )
 }
